@@ -323,6 +323,7 @@ m1.metric("Forecast for next day", f"{f['pred']:.0f} AQI", f"{f['pred'] - f['tod
           delta_color="inverse")
 m2.metric("Likely range (10-90%)", f"{f['low']:.0f} - {f['high']:.0f}")
 m3.markdown(f"**Personal risk for {profile}**")
+m3.caption("Risk is based on the upper end of the forecast range, to be cautious.")
 m3.markdown(f"<div style='background:{COLORS[personal]};color:white;padding:10px;"
             f"border-radius:8px;text-align:center;font-size:20px'>{personal}</div>", unsafe_allow_html=True)
 st.write(f"General air quality category: **{air_cat}**  |  Data as of **{pd.to_datetime(f['as_of']).date()}**")
